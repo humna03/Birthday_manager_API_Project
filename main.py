@@ -46,7 +46,7 @@ def get_birthdays(birthday_id:int,session:Session = Depends(get_session)):
      if not birthday:
           raise HTTPException(status_Code=404,detail=" not found ")
      return birthday
-@app.put("/birthday/{birthday_id}")
+@app.put("/birthdays/{birthday_id}")
 def update_birthday(birthday_id:int,updated:BirthdayCreate,session:Session=Depends(get_session)):
      birthday = session.get(Birthday,birthday_id)
      if not birthday:
@@ -56,7 +56,7 @@ def update_birthday(birthday_id:int,updated:BirthdayCreate,session:Session=Depen
      session.commit()
      session.refresh(birthday)
      return birthday
-@app.delete("/birthday/{birthday_id}")
+@app.delete("/birthdays/{birthday_id}")
 def delete_birthday(birthday_id:int,session:Session=Depends(get_session)):
      birthday = session.get(Birthday,birthday_id)
      if not birthday:
@@ -64,7 +64,7 @@ def delete_birthday(birthday_id:int,session:Session=Depends(get_session)):
      session.delete(birthday)
      session.commit()
      return{"record":"deleted successfully"}
-@app.post("/birthday/{birthday_id}/gift_ideas")
+@app.post("/birthdays/{birthday_id}/gift_ideas")
 def gift_ideas(
      birthday_id:int,
      request:GiftRequest,
