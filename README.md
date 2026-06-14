@@ -232,17 +232,6 @@ Using Swagger UI, users can test all endpoints directly from the browser.
 
 ---
 
-# 📸 Project Screenshots
-
-## Swagger API Documentation
-
-(Add screenshot here)
-
-## Add Birthday Endpoint
-
-(Add screenshot here)
-
----
 
 # 🎯 Learning Outcomes
 
